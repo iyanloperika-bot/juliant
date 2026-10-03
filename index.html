@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>iyantektok – Unduh Video TikTok Tanpa Watermark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ff;--bg2:#ebe6ff;--card:#fff;--ink:#1a1530;--mute:#6b6585;--line:#ddd7f2;--acc:#6c3df4;--acc-ink:#fff;--mint:#12b886;--coral:#f0506e;--glow:rgba(108,61,244,.18)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#110e1f;--bg2:#1b1633;--card:#1a1630;--ink:#f1eeff;--mute:#a49fc4;--line:#2f2850;--acc:#8f6bff;--acc-ink:#120c2b;--mint:#5eead4;--coral:#ff8097;--glow:rgba(143,107,255,.25)}}
+:root[data-theme="dark"]{--bg:#110e1f;--bg2:#1b1633;--card:#1a1630;--ink:#f1eeff;--mute:#a49fc4;--line:#2f2850;--acc:#8f6bff;--acc-ink:#120c2b;--mint:#5eead4;--coral:#ff8097;--glow:rgba(143,107,255,.25)}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;background-image:radial-gradient(60rem 30rem at 50% -10%,var(--glow),transparent 70%)}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px}
+nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{font:800 1.3rem "Bricolage Grotesque",sans-serif;display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--acc),var(--mint));display:grid;place-items:center;color:var(--acc-ink);font-style:normal;font-size:1rem}
+.badge{font-size:.82rem;color:var(--mute);border:1px solid var(--line);padding:5px 12px;border-radius:99px}
+.hero{padding:44px 0 28px;text-align:center}
+h1{font-size:clamp(2.3rem,7.5vw,4.3rem);font-weight:800;letter-spacing:-.03em}
+.sub{color:var(--mute);max-width:520px;margin:16px auto 30px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:8px;box-shadow:0 18px 50px var(--glow);transition:border-color .2s}
+.bar:focus-within{border-color:var(--acc)}
+.bar input{flex:1 1 220px;min-width:0;border:0;background:transparent;color:var(--ink);font:inherit;font-size:1rem;padding:12px 14px;outline:none}
+.btn{font:600 .98rem "DM Sans",sans-serif;border:0;border-radius:14px;padding:12px 20px;cursor:pointer;background:var(--acc);color:var(--acc-ink);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .12s,opacity .2s}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible,.bar input:focus-visible,summary:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.sm{padding:9px 14px;font-size:.88rem;border-radius:11px}
+.btn[disabled]{opacity:.6;cursor:wait}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.chip{font-size:.85rem;padding:5px 12px;border-radius:99px;background:var(--bg2);color:var(--mute)}
+.msg{margin-top:14px;font-size:.92rem;min-height:1.4em}
+.msg.err{color:var(--coral)}.msg.ok{color:var(--mint)}
+#result{display:none;margin:10px 0 40px;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:20px;text-align:left;animation:pop .35s ease}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.top{display:grid;grid-template-columns:150px 1fr;gap:20px}
+.thumb{aspect-ratio:9/16;border-radius:16px;background:linear-gradient(160deg,var(--acc),var(--coral) 60%,var(--mint));overflow:hidden;position:relative}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb span{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,.6);color:#fff;font-size:.75rem;padding:2px 8px;border-radius:8px}
+.who{font-weight:600}.who small{color:var(--mute);font-weight:400;margin-left:6px}
+.cap{margin:10px 0 0;color:var(--ink);font-size:.95rem;max-height:7.5em;overflow:auto;white-space:pre-wrap;word-break:break-word}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tags b{font-weight:500;font-size:.82rem;color:var(--acc);background:var(--bg2);padding:2px 10px;border-radius:99px}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+h3{font-size:1rem;margin:22px 0 10px}
+.dl{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.dl .btn{justify-content:flex-start;padding:14px 16px}
+.dl .btn small{display:block;font-weight:400;opacity:.75;font-size:.76rem;line-height:1.2}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.photos a{aspect-ratio:3/4;border-radius:12px;background:var(--bg2);display:grid;place-items:center;font-size:.8rem;color:var(--mute);text-decoration:none;overflow:hidden;border:1px solid var(--line)}
+.photos img{width:100%;height:100%;object-fit:cover}
+section{padding:28px 0}
+h2{font-size:clamp(1.6rem,4.5vw,2.2rem);letter-spacing:-.02em;margin-bottom:20px}
+.steps{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));counter-reset:s;padding:0;list-style:none}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--acc);color:var(--acc-ink);font-weight:700;margin-bottom:10px}
+.steps b{display:block;margin-bottom:4px}.steps span{color:var(--mute);font-size:.92rem}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";color:var(--acc);font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--mute);margin:10px 0 0}
+footer{padding:30px 0 40px;color:var(--mute);font-size:.85rem;text-align:center}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:99px;font-size:.9rem;opacity:0;pointer-events:none;transition:.25s;z-index:9}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media(max-width:560px){.top{grid-template-columns:96px 1fr;gap:14px}.bar .btn{flex:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="logo" href="#"><i>▼</i>IyanTT</a><span class="badge" id="mode">Memeriksa server…</span></nav>
+
+<header class="hero">
+<h1>Simpan video TikTok tanpa watermark.</h1>
+<p class="sub">Tempel tautan, pilih format, selesai. Video HD, foto slideshow, story, dan MP3 — gratis, tanpa daftar.</p>
+<form class="bar" id="f" autocomplete="off">
+<input id="u" type="url" inputmode="url" placeholder="https://www.tiktok.com/@akun/video/…" aria-label="Tautan TikTok" required>
+<button type="button" class="btn ghost" id="paste">Tempel</button>
+<button class="btn" id="go" type="submit">Unduh</button>
+</form>
+<div class="msg" id="msg" role="status"></div>
+<div class="chips"><span class="chip">Video HD</span><span class="chip">Foto &amp; slideshow</span><span class="chip">Story</span><span class="chip">Audio MP3</span><span class="chip">Salin caption &amp; hashtag</span></div>
+</header>
+
+<div id="result" aria-live="polite">
+<div class="top">
+<div class="thumb" id="thumb"><span id="dur"></span></div>
+<div>
+<div class="who"><span id="nick"></span><small id="uid"></small></div>
+<p class="cap" id="cap"></p>
+<div class="tags" id="tags"></div>
+<div class="row">
+<button class="btn sm ghost" data-copy="cap">Salin caption</button>
+<button class="btn sm ghost" data-copy="tags">Salin hashtag</button>
+<button class="btn sm" data-copy="all">Salin semua</button>
+</div>
+</div>
+</div>
+<h3>Pilih unduhan</h3>
+<div class="dl" id="dl"></div>
+<div id="photoBox" hidden><h3>Foto</h3><div class="photos" id="photos"></div></div>
+</div>
+
+<section>
+<h2>Cara pakainya</h2>
+<ol class="steps">
+<li><b>Salin tautan</b><span>Di TikTok, ketuk Bagikan lalu Salin Tautan.</span></li>
+<li><b>Tempel di sini</b><span>Tempel ke kolom di atas, lalu tekan Unduh.</span></li>
+<li><b>Server memproses</b><span>Tautan dianalisis untuk menemukan file asli yang bersih dari watermark.</span></li>
+<li><b>Simpan file</b><span>Ketuk tombol MP4 atau MP3. File masuk ke folder Downloads.</span></li>
+</ol>
+</section>
+
+<section>
+<h2>Pertanyaan umum</h2>
+<details><summary>Apakah gratis?</summary><p>Ya. Tidak ada biaya, akun, atau batas jumlah unduhan harian dari sisi situs ini.</p></details>
+<details><summary>Apakah bisa mengunduh akun privat?</summary><p>Tidak. Hanya konten publik yang bisa diambil.</p></details>
+<details><summary>Kenapa foto/story kadang gagal?</summary><p>Story hanya bisa diunduh selama masih tayang dan akunnya publik. Jika gagal, coba salin ulang tautan.</p></details>
+<details><summary>Boleh dipakai untuk repost?</summary><p>Unduh hanya konten milikmu atau yang sudah kamu dapat izinnya. Hak cipta tetap milik kreatornya.</p></details>
+</section>
+
+<footer>IyanTT tidak berafiliasi dengan TikTok atau ByteDance. Seluruh merek dagang milik pemiliknya masing-masing.</footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+let LIVE=false,cur=null;
+
+const DEMO={code:0,data:{id:"7300000000000000000",title:"Contoh caption video: pagi yang tenang di pantai 🌊 #pantai #healing #fyp #jalanjalan",duration:24,cover:"",play:"",hdplay:"",music:"",images:[],author:{nickname:"Akun Contoh",unique_id:"akun.contoh"}}};
+
+fetch('/api/health').then(r=>r.ok?r.text():'').then(t=>{
+  LIVE=t==='ok';
+  $('mode').textContent=LIVE?'Server aktif':'Mode demo';
+}).catch(()=>{$('mode').textContent='Mode demo'});
+
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),1800)}
+function msg(t,c){const m=$('msg');m.textContent=t;m.className='msg '+(c||'')}
+
+async function copy(text){
+  try{await navigator.clipboard.writeText(text)}
+  catch(e){const a=document.createElement('textarea');a.value=text;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(_){}a.remove()}
+  toast('Tersalin')
+}
+
+$('paste').onclick=async()=>{
+  try{const t=await navigator.clipboard.readText();if(t){$('u').value=t.trim();msg('')}}
+  catch(e){msg('Izin clipboard ditolak. Tempel manual di kolom.','err')}
+};
+
+$('f').onsubmit=async e=>{
+  e.preventDefault();
+  const url=$('u').value.trim();
+  if(!/tiktok\.com\//i.test(url)){msg('Tautan harus dari tiktok.com. Salin ulang dari tombol Bagikan.','err');return}
+  $('go').disabled=true;$('go').textContent='Memproses…';msg('');$('result').style.display='none';
+  try{
+    let j;
+    if(LIVE){const r=await fetch('/api/resolve?url='+encodeURIComponent(url));j=await r.json()}
+    else{await new Promise(r=>setTimeout(r,700));j=DEMO}
+    if(j.code!==0||!j.data)throw new Error(j.msg||'Video tidak ditemukan');
+    render(j.data);
+    msg(LIVE?'Siap diunduh.':'Mode demo: jalankan server.js untuk unduhan sungguhan.',LIVE?'ok':'');
+  }catch(err){msg('Gagal: '+(err.message||'tidak bisa memproses tautan')+'. Pastikan video publik.','err')}
+  $('go').disabled=false;$('go').textContent='Unduh';
+};
+
+function render(d){
+  cur=d;
+  const title=d.title||'',tags=title.match(/#[\p{L}\p{N}_]+/gu)||[];
+  const cap=title.replace(/#[\p{L}\p{N}_]+/gu,'').replace(/\s+/g,' ').trim();
+  $('nick').textContent=d.author?.nickname||'';
+  $('uid').textContent=d.author?.unique_id?'@'+d.author.unique_id:'';
+  $('cap').textContent=cap||'(tanpa caption)';
+  $('tags').innerHTML=tags.length?'':'<span class="chip">Tidak ada hashtag</span>';
+  tags.forEach(t=>{const b=document.createElement('b');b.textContent=t;$('tags').appendChild(b)});
+  $('dur').textContent=d.duration?d.duration+' dtk':'';$('dur').style.display=d.duration?'':'none';
+  const th=$('thumb');th.querySelector('img')?.remove();
+  if(d.cover){const i=new Image();i.alt='';i.src=d.cover;i.onerror=()=>i.remove();th.prepend(i)}
+  cur._cap=cap;cur._tags=tags.join(' ');
+  const id=d.id||'tiktok',items=[];
+  if(d.images&&d.images.length){
+    $('photoBox').hidden=false;$('photos').innerHTML='';
+    d.images.forEach((u,i)=>{const a=document.createElement('a');a.href=link(u,`${id}_${i+1}.jpg`);a.textContent='Foto '+(i+1);
+      const im=new Image();im.alt='';im.src=u;im.onload=()=>{a.textContent='';a.appendChild(im)};$('photos').appendChild(a)});
+  }else $('photoBox').hidden=true;
+  if(d.hdplay||!LIVE)items.push(['Video HD','Tanpa watermark',d.hdplay,id+'_hd.mp4']);
+  if(d.play||!LIVE)items.push(['Video','Tanpa watermark (2)',d.play,id+'.mp4']);
+  if(d.music||!LIVE)items.push(['Audio MP3','Musik asli',d.music,id+'.mp3']);
+  $('dl').innerHTML='';
+  items.forEach(([t,s,u,n])=>{
+    const a=document.createElement('a');a.className='btn';a.innerHTML='<span>⬇</span><span>'+t+'<small>'+s+'</small></span>';
+    if(LIVE&&u){a.href=link(u,n)}else{a.href='#';a.onclick=e=>{e.preventDefault();toast('Mode demo: belum ada file')}}
+    $('dl').appendChild(a)});
+  $('result').style.display='block';
+  $('result').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function link(u,n){return LIVE?'/api/download?url='+encodeURIComponent(u)+'&name='+encodeURIComponent(n):'#'}
+
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-copy]');if(!b||!cur)return;
+  const k=b.dataset.copy;
+  copy(k==='cap'?cur._cap:k==='tags'?cur._tags:[cur._cap,cur._tags].filter(Boolean).join('\n\n'));
+});
+</script>
+</body>
+</html>
